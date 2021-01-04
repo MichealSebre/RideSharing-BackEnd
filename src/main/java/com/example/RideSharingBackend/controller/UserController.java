@@ -27,6 +27,11 @@ public class UserController {
         return service.getUserById(id);
     }
 
+    @PostMapping(value="/userUpdate")
+    public User updatePartialUser(@RequestBody User user){
+        return service.saveUser(user);
+    }
+
     @PostMapping(value="/deleteUser/{id}")
     public void deleteUser(@PathVariable("id") Long id){
                service.deleteUser(id);
